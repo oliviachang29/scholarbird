@@ -72,14 +72,10 @@ export default withAuth(class Home extends Component {
         } else {
             await this.fetch('post', '/scholarships', scholarship);
         }
-
-        // this.props.history.goBack();
-        this.getScholarships();
     }
 
     async unsaveScholarship(id) {
         await this.fetch('delete', `/scholarships/${id}`);
-        this.getScholarships();
     }
 
     async componentDidUpdate() {
