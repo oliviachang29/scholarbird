@@ -28,7 +28,7 @@ body {
 }
 
 .logo {
-	margin-bottom: 40px;
+	margin: 20px 0 40px !important;
 }
 
 .hero {
@@ -41,7 +41,7 @@ body {
 }
 
 .hero img {
-	margin-top: -50px;
+	/*margin-top: -50px;*/
 	max-width: 500% !important;
 	width: auto;
 }

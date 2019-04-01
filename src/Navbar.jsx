@@ -43,16 +43,15 @@ export default withAuth(class Navbar extends Component {
   render() {
     return (
       <div>
-        {this.state.authenticated && 
-          <Menu fixed="top">
-              <Menu.Item className="nav-item" as="a" header href="/">Scholarbird</Menu.Item>
-              <Menu.Menu position='right'>
-                <Menu.Item className="nav-item" as="a" href="/"><Icon name="search outline" />Discover</Menu.Item>
-                <Menu.Item className="nav-item" as="a" href="/saved"><Icon name="heart outline" />Saved</Menu.Item>
-                <Menu.Item className="nav-item" as="a" onClick={this.logout}>Logout</Menu.Item>
-              </Menu.Menu>
-          </Menu>
-        }
+        <Menu fixed="top">
+            <Menu.Item className="nav-item" as="a" header href="/">Scholarbird</Menu.Item>
+            <Menu.Menu position='right'>
+              {this.state.authenticated === true && <Menu.Item className="nav-item" as="a" href="/"><Icon name="search outline" />Discover</Menu.Item>}
+              {this.state.authenticated === true && <Menu.Item className="nav-item" as="a" href="/saved"><Icon name="heart outline" />Saved</Menu.Item>}
+              {this.state.authenticated === true && <Menu.Item className="nav-item" as="a" onClick={this.logout}>Logout</Menu.Item>}
+              {this.state.authenticated === false && <Menu.Item className="nav-item" as="a" onClick={this.login}>Login</Menu.Item>}
+            </Menu.Menu>
+        </Menu>
       </div>
     );
   }
