@@ -13,7 +13,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Security, SecureRoute, ImplicitCallback } from '@okta/okta-react';
-import { Container } from 'semantic-ui-react';
 import config from './.samples.config';
 import Home from './Home';
 import Navbar from './Navbar';

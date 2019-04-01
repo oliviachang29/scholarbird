@@ -12,7 +12,6 @@
 
 import { withAuth } from '@okta/okta-react';
 import React, { Component } from 'react';
-import { Container, Button, Header, Icon } from 'semantic-ui-react';
 import { checkAuthentication } from './helpers';
 import ScholarshipList from './components/ScholarshipList.js'
 import Intro from './components/Intro.js'
@@ -20,9 +19,6 @@ import InfoForm from './components/InfoForm.js'
 
 const sheety_link = "https://api.sheety.co/c8bcc89a-5bce-42f7-ae85-8bc44b979f3c";
 const API = process.env.REACT_APP_API || 'http://localhost:8081';
-var _ = require('lodash');
-
-var src = "";
 
 export default withAuth(class Home extends Component {
     constructor(props) {
@@ -43,7 +39,6 @@ export default withAuth(class Home extends Component {
         fetch(sheety_link)
             .then(response => response.json())
             .then(data => {
-                src = data;
                 this.setState({ data });
             });
         // }
@@ -91,7 +86,7 @@ export default withAuth(class Home extends Component {
     }
 
     render() {
-      if (this.state.authenticated !== null && this.state.authenticated == true) {
+      if (this.state.authenticated !== null && this.state.authenticated === true) {
         return (
           <div>
             {this.state.showScholarships?
@@ -110,7 +105,7 @@ export default withAuth(class Home extends Component {
             }
           </div>
         )
-      } else if (this.state.authenticated == false) {
+      } else if (this.state.authenticated === false) {
         return <Intro login={this.login} />
       } else {
         return <div></div>

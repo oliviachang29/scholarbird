@@ -12,7 +12,7 @@
 
 import { withAuth } from '@okta/okta-react';
 import React, { Component } from 'react';
-import { Container, Button, Header, Icon } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { checkAuthentication } from './helpers';
 import ScholarshipList from './components/ScholarshipList.js'
 

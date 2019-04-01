@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Scholarship from './scholarship.js'
-import { Header, Form, Radio, Checkbox, Container, Image, Button} from 'semantic-ui-react';
+import { Form, Radio, Checkbox, Container, Image, Button} from 'semantic-ui-react';
 var _ = require('lodash');
 
-const API = process.env.REACT_APP_API || 'http://localhost:8081';
 const deadlineFirst = ["deadline", "amount"]
 const amountFirst = ["amount", "deadline"]
 
@@ -83,9 +82,10 @@ export default class ScholarshipList extends Component {
     }
 
     render() {
+        var scholarships;
         if (this.props.scholarships) {
             var sortedData = this.filterScholarships(this.props.scholarships)
-            this.state.scholarships = sortedData.map((scholarship, i) =>
+            scholarships = sortedData.map((scholarship, i) =>
                 <Scholarship
 				          key={i}
 				          scholarship={scholarship}
@@ -106,7 +106,7 @@ export default class ScholarshipList extends Component {
             );
         }
         var emptyStateText = this.props.savedPage ? "You haven't saved any scholarships yet." : "No scholarships to display."
-        var num_scholarships = this.state.scholarships ? this.state.scholarships.length : 0
+        var num_scholarships = scholarships ? scholarships.length : 0
         return (
           <div>
         	{!this.props.savedPage &&
@@ -117,7 +117,7 @@ export default class ScholarshipList extends Component {
 		          </Container>
 		        </div>
         	}
-        	{this.state.scholarships && this.state.scholarships.length > 0 &&
+        	{scholarships && scholarships.length > 0 &&
         		<Container className="scholarship-list-container">
         		<div class="d-flex flex-row filter-and-sort">
         			<div className="filter-container">
@@ -158,9 +158,9 @@ export default class ScholarshipList extends Component {
 		      }
 		      <Container>
 		      	<div class="row">
-	        		{this.state.scholarships}
+	        		{scholarships}
 	        	</div>
-	        	{this.state.scholarships && this.state.scholarships.length == 0 &&
+	        	{scholarships && scholarships.length === 0 &&
 	        		<div class="d-flex flex-column align-items-center empty-state">
 		        		<Image src='https://s3.amazonaws.com/github-demo-images/hiker-man-colour-1200px.png' size="large"/>
 		        		<p className="empty-state-text">{emptyStateText}</p>

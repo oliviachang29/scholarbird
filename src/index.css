@@ -2,14 +2,14 @@
    font-family: Graphik;
    font-weight: normal;
    font-style: normal;
-   src: url('/src/fonts/Graphik-Regular.ttf');
+   src: url('/src/fonts/Graphik-Regular.ttf') format('ttf');
 } 
 
 @font-face {
    font-family: Graphik;
    font-weight: bold;
    font-style: normal;
-   src: url('/src/fonts/Graphik-Semibold.ttf');
+   src: url('/src/fonts/Graphik-Semibold.ttf') format('ttf');
 } 
 
 body {

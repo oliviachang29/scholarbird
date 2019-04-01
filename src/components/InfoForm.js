@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Header, Container } from 'semantic-ui-react'
+import { Form, Container } from 'semantic-ui-react'
 
 const major_options = [
 	{key: 'Undecided', text: 'Undecided', value: 'Undecided'},
@@ -64,7 +64,7 @@ export default class InfoForm extends Component {
 
   // handle change for all
   render() {
-  	const { gender, gpa, age, major } = this.state
+
     return (
       <Form onSubmit={this.handleSubmit}>
 	      <div className="list-header-background form-background">

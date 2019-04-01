@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Button, Image } from 'semantic-ui-react';
+import { Button, Image } from 'semantic-ui-react';
 
 export default class Scholarship extends Component {
 
