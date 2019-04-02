@@ -2,6 +2,10 @@
 
 <img src="https://s3.amazonaws.com/github-demo-images/github-demo-scholarbird.png" width="100%">
 
+## Demo
+
+Link to demo video: https://www.youtube.com/embed/UEOiw3ZER6o
+
 ## The Problem
 
 With the recent college admissions scandal, a lot of attention has been placed on "elite" institutions and their admissions processes; not as much thought has been given to the fact that for most Americans, college is not _the most prestigious college I can get into_  but _can I go to college at all?_. 
@@ -13,10 +17,6 @@ What keeps many Americans from attending college? The vast majority of Americans
 Scholarbird helps you discover scholarships through a UI that's actually nice to use. Users can filter scholarships by criteria (GPA, gender, etc.) and save them for later. It runs on Node.js and React, and uses Okta for authentication. The scholarships are pulled from a Google Sheet using Sheety.co API.
 
 It was very important to me that Scholarbird was user-friendly and aesthetically pleasing, and I focused a lot on polishing the design - making it professional and intuitive.
-
-## Demo
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UEOiw3ZER6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Business Value
 
